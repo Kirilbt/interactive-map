@@ -32,19 +32,43 @@ export default class Bike {
   }
 
   setPlateforme10Model() {
-    // const bakedTextureA = new THREE.MeshBasicMaterial({ map: this.resources.items.textureBuildings })
-    // const bakedTextureB = new THREE.MeshBasicMaterial({ map: this.resources.items.textureMdba })
-    // const bakedTextureC = new THREE.MeshBasicMaterial({ map: this.resources.items.textureMudacDetails })
-    // const bakedTextureD = new THREE.MeshBasicMaterial({ map: this.resources.items.textureTerrain })
-    // bakedTextureD.flipY = false
-    // bakedTextureD.encoding = THREE.sRGBEncoding
+    const textureBuildings = new THREE.MeshBasicMaterial({ map: this.resources.items.textureBuildings })
+    textureBuildings.flipY = false
+    textureBuildings.encoding = THREE.sRGBEncoding
 
+    const textureMdba = new THREE.MeshBasicMaterial({ map: this.resources.items.textureMdba })
+    textureMdba.flipY = false
+    textureMdba.encoding = THREE.sRGBEncoding
+
+    const textureMudacDetails = new THREE.MeshBasicMaterial({ map: this.resources.items.textureMudacDetails })
+    textureMudacDetails.flipY = false
+    textureMudacDetails.encoding = THREE.sRGBEncoding
+
+    const textureTerrain = new THREE.MeshBasicMaterial({ map: this.resources.items.textureTerrain })
+    textureTerrain.flipY = false
+    textureTerrain.encoding = THREE.sRGBEncoding
+
+    const tempTexture = new THREE.MeshBasicMaterial({ color: 0xffcc00 })
     const lightPanelTexture = new THREE.MeshBasicMaterial({ color: 0xffffe5 })
-    const tempTexture = new THREE.MeshBasicMaterial({ color: 0xff00cc })
 
     this.actualPlateforme10.traverse((child) => {
+      // child.material = tempTexture
 
-      child.material = tempTexture
+      if(child.name.match(/^mdba.*$/)) {
+        child.material = textureMdba
+      }
+
+      if(child.name.match(/^mudac.*$/)) {
+        child.material = textureMudacDetails
+      }
+
+      if(child.name.match(/^terrain.*$/)) {
+        child.material = textureTerrain
+      }
+
+      if(child.name.match(/^buildings.*$/)) {
+        child.material = textureBuildings
+      }
 
       if(child.name.match(/^lightPanel.*$/)) {
         child.material = lightPanelTexture

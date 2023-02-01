@@ -31,15 +31,13 @@ export default class Resources extends EventEmitter {
 
   startLoading() {
     for(const asset of this.assets) {
-      if (asset.type === 'glbModel') {
-        this.loaders.gltfLoader.load(asset.path, (file) => {
-          this.singleAssetLoaded(asset, file)
-          console.log(file);
-        })
-      } else if (asset.type === 'texture') {
+      if (asset.type === 'texture') {
         this.loaders.textureLoader.load(asset.path, (file) => {
           this.singleAssetLoaded(asset, file)
-          console.log(file);
+        })
+      } else if (asset.type === 'glbModel') {
+        this.loaders.gltfLoader.load(asset.path, (file) => {
+          this.singleAssetLoaded(asset, file)
         })
       }
     }

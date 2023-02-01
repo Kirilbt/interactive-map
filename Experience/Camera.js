@@ -99,6 +99,7 @@ export default class Camera {
     this.controls = new OrbitControls(this.orthographicCamera, this.canvas)
     this.controls.enableDamping = true
     this.controls.enableZoom = true
+    this.controls.maxPolarAngle = Math.PI / 2
   }
 
   resize() {
