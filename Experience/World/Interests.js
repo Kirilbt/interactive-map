@@ -32,15 +32,15 @@ export default class Interests {
     this.points = [
       {
         position: new THREE.Vector3(4, 1.2, 0.5),
-        element: document.querySelector('.point-0')
+        element: document.querySelector('.mcba')
       },
       {
         position: new THREE.Vector3(-3.75, 1.2, 0.3),
-        element: document.querySelector('.point-1')
+        element: document.querySelector('.mudac')
       },
       {
-        position: new THREE.Vector3(-3.75, 1.2, -0.3),
-        element: document.querySelector('.point-2')
+        position: new THREE.Vector3(-3.75, 1.2, -1.55),
+        element: document.querySelector('.elysee')
       }
     ]
 
