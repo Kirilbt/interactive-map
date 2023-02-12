@@ -17,7 +17,7 @@ export default [
   {
     name: 'textureMudacDetails',
     type: 'texture',
-    path: '/textures/mudac-details-baked.jpg'
+    path: '/textures/mudacDetails-baked.jpg'
   },
   {
     name: 'textureTerrain',

@@ -32,49 +32,53 @@ export default class Bike {
   }
 
   setPlateforme10Model() {
-    const textureBuildings = new THREE.MeshBasicMaterial({ map: this.resources.items.textureBuildings })
+    const textureBuildings = this.resources.items.textureBuildings
     textureBuildings.flipY = false
     textureBuildings.encoding = THREE.sRGBEncoding
+    const materialBuildings = new THREE.MeshBasicMaterial({ map: textureBuildings })
 
-    const textureMdba = new THREE.MeshBasicMaterial({ map: this.resources.items.textureMdba })
+    const textureMdba = this.resources.items.textureMdba
     textureMdba.flipY = false
     textureMdba.encoding = THREE.sRGBEncoding
+    const materialMdba = new THREE.MeshBasicMaterial({ map: textureMdba })
 
-    const textureMudacDetails = new THREE.MeshBasicMaterial({ map: this.resources.items.textureMudacDetails })
+    const textureMudacDetails = this.resources.items.textureMudacDetails
     textureMudacDetails.flipY = false
     textureMudacDetails.encoding = THREE.sRGBEncoding
+    const materialMudacDetails = new THREE.MeshBasicMaterial({ map: textureMudacDetails })
 
-    const textureTerrain = new THREE.MeshBasicMaterial({ map: this.resources.items.textureTerrain })
+    const textureTerrain = this.resources.items.textureTerrain
     textureTerrain.flipY = false
     textureTerrain.encoding = THREE.sRGBEncoding
+    const materialTerrain = new THREE.MeshBasicMaterial({ map: textureTerrain })
 
-    const tempTexture = new THREE.MeshBasicMaterial({ color: 0xffcc00 })
+    const tempMaterial = new THREE.MeshBasicMaterial({ color: 0xffcc00 })
     const lightPanelTexture = new THREE.MeshBasicMaterial({ color: 0xffffe5 })
 
     this.actualPlateforme10.traverse((child) => {
-      // child.material = tempTexture
+      // child.material = tempMaterial
 
       if(child.name.match(/^mdba.*$/)) {
-        child.material = textureMdba
+        child.material = materialMdba
       }
 
       if(child.name.match(/^mudac.*$/)) {
-        child.material = textureMudacDetails
+        child.material = materialMudacDetails
       }
 
       if(child.name.match(/^terrain.*$/)) {
-        child.material = textureTerrain
+        child.material = materialTerrain
       }
 
       if(child.name.match(/^buildings.*$/)) {
-        child.material = textureBuildings
+        child.material = materialBuildings
       }
 
       if(child.name.match(/^lightPanel.*$/)) {
         child.material = lightPanelTexture
       }
 
-      this.plateforme10Children[child.name.toLowerCase()] = child
+      // this.plateforme10Children[child.name.toLowerCase()] = child
     })
   }
 
@@ -86,7 +90,7 @@ export default class Bike {
   }
 
   setPlateforme10Group() {
-    // New group so we can rotate the Plateforme10 with GSAP without intefering with our mouse rotation lerping
+    // New group so we can rotate the Plateforme10 with GStAP without intefering with our mouse rotation lerping
     // Like a spinning plateform that can spin independetly from others
     this.group = new THREE.Group()
     this.group.add(this.actualPlateforme10)
@@ -102,6 +106,6 @@ export default class Bike {
       this.lerp.ease
     )
 
-    this.group.rotation.y = this.lerp.current
+    // this.group.rotation.y = this.lerp.current
   }
 }

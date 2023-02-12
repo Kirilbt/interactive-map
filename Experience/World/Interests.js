@@ -14,11 +14,12 @@ export default class Interests {
     // Debug
     if(this.debug.active) {
       this.debugFolder = this.debug.ui.addFolder('interest1')
-      this.obj = {
-        x: 1.55,
-        y: 0.3,
-        z: - 0.6
-      }
+    }
+
+    this.obj = {
+      x: 4,
+      y: 1.2,
+      z: 0.5
     }
 
     // Setup
@@ -28,30 +29,61 @@ export default class Interests {
   }
 
   setInterests() {
-    this.points = [{
-      position: new THREE.Vector3(this.obj.x, this.obj.y, this.obj.z),
-      element: document.querySelector('.point-0')
-    }]
+    this.points = [
+      {
+        position: new THREE.Vector3(4, 1.2, 0.5),
+        element: document.querySelector('.point-0')
+      },
+      {
+        position: new THREE.Vector3(-3.75, 1.2, 0.3),
+        element: document.querySelector('.point-1')
+      },
+      {
+        position: new THREE.Vector3(-3.75, 1.2, -0.3),
+        element: document.querySelector('.point-2')
+      }
+    ]
 
     // Debug
     if(this.debug.active) {
       this.debugFolder
-        .add(this.points[0].position, 'x')
+        .add(this.points[1].position, 'x')
         .name('x')
         .min(-10)
         .max(10)
         .step(0.01)
 
         this.debugFolder
-        .add(this.points[0].position, 'y')
+        .add(this.points[1].position, 'y')
         .name('y')
         .min(-10)
         .max(10)
         .step(0.01)
 
         this.debugFolder
-        .add(this.points[0].position, 'z')
+        .add(this.points[1].position, 'z')
         .name('z')
+        .min(-10)
+        .max(10)
+        .step(0.01)
+
+        this.debugFolder
+        .add(this.points[2].position, 'x')
+        .name('x2')
+        .min(-10)
+        .max(10)
+        .step(0.01)
+
+        this.debugFolder
+        .add(this.points[2].position, 'y')
+        .name('y2')
+        .min(-10)
+        .max(10)
+        .step(0.01)
+
+        this.debugFolder
+        .add(this.points[2].position, 'z')
+        .name('z2')
         .min(-10)
         .max(10)
         .step(0.01)
