@@ -28,6 +28,40 @@ footer {
   width: 100%;
 }
 
+.info {
+  opacity: 1;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 33%;
+  height: 100vh;
+  background-color: #fff;
+  color: #041676;
+  padding: 1.25rem;
+  z-index: 100;
+}
+
+.info .close {
+  float: right;
+}
+
+.info h2 {
+  padding-bottom: 1.25rem;
+}
+
+.info h3 {
+  padding-bottom: 1.25rem;
+}
+
+.info p {
+  padding-bottom: 2rem;
+}
+
+.info img {
+  max-width: 100%;
+  padding-bottom: 1.25rem;
+}
+
 .point {
   position: absolute;
   top: 50%;
@@ -59,9 +93,9 @@ footer {
   left: -120px;
   width: 200px;
   padding: 20px;
-  border-radius: 4px;
-  background: #00000077;
-  border: 1px solid #ffffff77;
+  background: #04167680;
+  backdrop-filter: blur(5px);
+  /* border: 1px solid #ffffff90; */
   color: #ffffff;
   line-height: 1.3em;
   font-family: Helvetica, Arial, sans-serif;
@@ -72,6 +106,34 @@ footer {
   pointer-events: none;
 }
 
+.text h3 {
+  margin-bottom: 1rem;
+}
+
 .point:hover .text {
   opacity: 1;
+}
+
+.icn {
+  width: 2rem;
+  height: 2rem;
+}
+
+button {
+  display: inline-block;
+  border: 1px solid #041676;
+  padding: 1rem 2rem;
+  width: 100%;
+  margin: 0;
+  text-decoration: none;
+  background-color: #041676;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+button:hover {
+  background-color: #fff;
+  color: #041676;
 }

@@ -41,49 +41,36 @@ export default class Interests {
       {
         position: new THREE.Vector3(-3.75, 1.2, -1.55),
         element: document.querySelector('.elysee')
+      },
+      {
+        position: new THREE.Vector3(1.85, 0.9, -1.05),
+        element: document.querySelector('.lift')
+      },
+      {
+        position: new THREE.Vector3(-0.65, 0.25, -1.2),
+        element: document.querySelector('.restaurant')
       }
     ]
 
     // Debug
     if(this.debug.active) {
-      this.debugFolder
-        .add(this.points[1].position, 'x')
-        .name('x')
+        this.debugFolder
+        .add(this.points[4].position, 'x')
+        .name('x4')
         .min(-10)
         .max(10)
         .step(0.01)
 
         this.debugFolder
-        .add(this.points[1].position, 'y')
-        .name('y')
+        .add(this.points[4].position, 'y')
+        .name('y4')
         .min(-10)
         .max(10)
         .step(0.01)
 
         this.debugFolder
-        .add(this.points[1].position, 'z')
-        .name('z')
-        .min(-10)
-        .max(10)
-        .step(0.01)
-
-        this.debugFolder
-        .add(this.points[2].position, 'x')
-        .name('x2')
-        .min(-10)
-        .max(10)
-        .step(0.01)
-
-        this.debugFolder
-        .add(this.points[2].position, 'y')
-        .name('y2')
-        .min(-10)
-        .max(10)
-        .step(0.01)
-
-        this.debugFolder
-        .add(this.points[2].position, 'z')
-        .name('z2')
+        .add(this.points[4].position, 'z')
+        .name('z4')
         .min(-10)
         .max(10)
         .step(0.01)
