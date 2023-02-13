@@ -15,6 +15,9 @@ header {
   left: 0;
   padding: 1.25rem;
   z-index: 1;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
 }
 
 footer {
@@ -26,6 +29,36 @@ footer {
   display: flex;
   justify-content: space-between;
   width: 100%;
+  border-top: 1px solid #041676;
+  color: #041676;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.links a:not(:last-child) {
+  margin-right: 0.5rem;
+}
+
+/* Links */
+
+a {
+  color: #041676;
+  text-decoration: none;
+  border-bottom: .1rem solid #041676;
+  transition: box-shadow .25s ease-in-out;
+}
+
+a:hover {
+  box-shadow: inset 0 -1.1rem 0 #3d59f650;
+  color: #000;
+}
+
+a:focus {
+  background: #fff;
+  outline: none;
+  background: #ff6407;
+  color: #fff;
+  box-shadow: 8px 8px 24px rgba(0, 0, 0, 0.2);
 }
 
 /* Scrollbar */
@@ -35,7 +68,7 @@ footer {
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: #d6d2ca;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -54,15 +87,15 @@ footer {
   height: 100vh;
   background-color: #fff;
   color: #041676;
-
   z-index: 100;
   transition: all .3s;
   overflow-y: auto;
 }
 
 .info-panel-header {
-  position: fixed;
-  width: 33%;
+  position: sticky;
+  top: 0;
+  width: 100%;
   background-color: #fff;
   padding: 1rem 1.25rem 1.2rem 1.25rem;
   display: flex;
@@ -70,18 +103,20 @@ footer {
 }
 
 .info-panel-content {
-  padding: 1.25rem;
+  padding: 0 1.25rem 1.25rem 1.25rem;
 }
 
-.info-panel h2 {
+.info-panel .info-panel-title {
   padding-bottom: 1.25rem;
 }
 
-.info-panel h3 {
+.info-panel .info-panel-lead {
+  font-weight: 700;
+  font-size: 1.125rem;
   padding-bottom: 1.25rem;
 }
 
-.info-panel p {
+.info-panel .info-panel-description {
   padding-bottom: 2rem;
 }
 
@@ -129,6 +164,7 @@ footer {
   padding: 20px;
   background: #04167680;
   backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
   color: #ffffff;
   line-height: 1.3em;
   font-family: Helvetica, Arial, sans-serif;
@@ -211,10 +247,8 @@ table {
 
   .info-panel {
     right: -100%;
-    top: 0;
     width: 100%;
     max-width: 100%;
-    height: 100vh;
   }
 
   .info-panel-header {
@@ -223,5 +257,10 @@ table {
 
   table {
     table-layout: auto;
+  }
+
+  footer {
+    flex-direction: column;
+    gap: 0.5rem;
   }
 }
