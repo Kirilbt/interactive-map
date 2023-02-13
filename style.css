@@ -9,6 +9,79 @@ body {
   overflow: hidden;
 }
 
+/* Experience */
+
+.experience {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+}
+
+.experience-canvas {
+  width: 100%;
+  height: 100%;
+}
+
+/* Preloader */
+
+.hidden {
+  display: none;
+}
+
+.preloader {
+  background-color: #d6d2ca;
+  width: 100%;
+  height: 100vh;
+  opacity: 1;
+  position: fixed;
+  z-index: 99999;
+}
+
+.preloader-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.circle {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background-color: #041676;
+  margin: 0.25rem;
+  animation: loading 1s ease-in-out infinite;
+}
+
+.circle:nth-child(2) {
+  animation-delay: 0.1s;
+}
+
+.circle:nth-child(3) {
+  animation-delay: 0.2s;
+}
+
+@keyframes loading {
+  0% {
+    transform: translateY(0);
+  }
+
+  20% {
+    transform: translateY(-0.75rem);
+  }
+
+  40% {
+    transform: translateY(0);
+  }
+}
+
 header {
   position: absolute;
   top: 0;
@@ -35,7 +108,7 @@ footer {
   -webkit-backdrop-filter: blur(8px);
 }
 
-.links a:not(:last-child) {
+footer .links a:not(:last-child) {
   margin-right: 0.5rem;
 }
 
@@ -73,6 +146,71 @@ a:focus {
 
 ::-webkit-scrollbar-thumb {
   background: #041676;
+}
+
+/* Interest Points */
+
+.point {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+.point .label {
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  color: #041676;
+  font-family: Helvetica, Arial, sans-serif;
+  text-align: center;
+  line-height: 40px;
+  font-weight: 100;
+  font-size: 32px;
+  cursor: help;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.museum .label {
+  cursor: pointer;
+}
+
+.point.visible .label {
+  opacity: 1;
+}
+
+.point .text {
+  position: absolute;
+  top: 1.5rem;
+  left: -120px;
+  padding: 1rem;
+  width: 12rem;
+  background: #04167690;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  color: #ffffff;
+  line-height: 1.2rem;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 0.875rem;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.2s;
+  pointer-events: none;
+}
+
+
+
+.text h3 {
+  margin-bottom: 1rem;
+}
+
+.point:hover .text {
+  opacity: 1;
+}
+
+.icn {
+  width: 2rem;
+  height: 2rem;
 }
 
 /* Info Panel */
@@ -129,65 +267,6 @@ a:focus {
   cursor: pointer;
 }
 
-/* Interests */
-
-.point {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-}
-
-.point .label {
-  position: absolute;
-  top: -20px;
-  left: -20px;
-  color: #041676;
-  font-family: Helvetica, Arial, sans-serif;
-  text-align: center;
-  line-height: 40px;
-  font-weight: 100;
-  font-size: 32px;
-  cursor: pointer;
-  transform: scale(0, 0);
-  transition: transform 0.3s;
-}
-
-.point.visible .label {
-  transform: scale(1, 1);
-}
-
-.point .text {
-  position: absolute;
-  top: 30px;
-  left: -120px;
-  width: 200px;
-  padding: 20px;
-  background: #04167680;
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
-  color: #ffffff;
-  line-height: 1.3em;
-  font-family: Helvetica, Arial, sans-serif;
-  font-weight: 100;
-  font-size: 14px;
-  opacity: 0;
-  transition: opacity 0.3s;
-  pointer-events: none;
-}
-
-.text h3 {
-  margin-bottom: 1rem;
-}
-
-.point:hover .text {
-  opacity: 1;
-}
-
-.icn {
-  width: 2rem;
-  height: 2rem;
-}
-
 button {
   display: inline-block;
   border: 1px solid #041676;
@@ -238,6 +317,8 @@ table td {
 table {
   margin-bottom: 1.5rem;
 }
+
+/* MOBILE / TABLET */
 
 @media screen and (max-width: 968px) {
   .logo {

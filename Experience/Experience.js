@@ -8,6 +8,7 @@ import assets from './Utils/assets.js'
 
 import Camera from './Camera.js'
 import Renderer from './Renderer.js'
+import Preloader from './Preloader.js'
 
 import World from './World/World.js'
 // import Controls from './Controls.js'
@@ -28,6 +29,7 @@ export default class Experience {
     this.renderer = new Renderer()
     this.resources = new Resources(assets)
     this.world = new World()
+    this.preloader = new Preloader()
 
     // this.preloader.on('enableControls', () => {
     //   this.controls = new Controls()

@@ -28,52 +28,9 @@ export default class Camera {
     // this.scene.add(axesHelper);
 
     // Setup
-    // this.createPerspectiveCamera()
     this.createOrthographicCamera()
     this.setOrbitControls()
   }
-
-  // createPerspectiveCamera() {
-  //   this.perspectiveCamera = new THREE.PerspectiveCamera(
-  //     35,
-  //     this.sizes.aspect,
-  //     0.1,
-  //     1000
-  //   )
-  //   this.scene.add(this.perspectiveCamera)
-
-  //   this.perspectiveCamera.position.y = 0.5
-  //   this.perspectiveCamera.position.z = 4
-  //   this.perspectiveCamera.lookAt(0, 0.65, 0);
-
-  //   // // Perspective Camera Helper
-  //   // this.perspectiveCameraHelper = new THREE.CameraHelper(this.perspectiveCamera)
-  //   // this.scene.add(this.perspectiveCameraHelper)
-
-  //   // Debug
-  //   if(this.debug.active) {
-  //     this.debugFolder
-  //       .add(this.perspectiveCamera.position, 'x')
-  //       .name('camPosX')
-  //       .min(-30)
-  //       .max(30)
-  //       .step(0.001)
-
-  //     this.debugFolder
-  //       .add(this.perspectiveCamera.position, 'y')
-  //       .name('camPosY')
-  //       .min(-30)
-  //       .max(30)
-  //       .step(0.001)
-
-  //     this.debugFolder
-  //       .add(this.perspectiveCamera.position, 'z')
-  //       .name('camPosZ')
-  //       .min(-30)
-  //       .max(30)
-  //       .step(0.001)
-  //   }
-  // }
 
   createOrthographicCamera() {
     this.orthographicCamera = new THREE.OrthographicCamera(
@@ -85,8 +42,7 @@ export default class Camera {
       20
     )
 
-    this.orthographicCamera.position.y = 1.25
-    this.orthographicCamera.rotation.x = -Math.PI / 24
+    this.orthographicCamera.position.y = 1
 
     this.scene.add(this.orthographicCamera)
 
@@ -103,10 +59,6 @@ export default class Camera {
   }
 
   resize() {
-    // // Updating Perspective Camera on Resize
-    // this.perspectiveCamera.aspect = this.sizes.aspect
-    // this.perspectiveCamera.updateProjectionMatrix()
-
     // Updating Orthographic Camera on Resize
     this.orthographicCamera.left = (-this.sizes.aspect * this.sizes.frustum) / 2
     this.orthographicCamera.right = (this.sizes.aspect * this.sizes.frustum) / 2
