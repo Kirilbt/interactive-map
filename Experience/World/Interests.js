@@ -11,6 +11,12 @@ export default class Interests {
     this.resources = this.experience.resources
     this.camera = this.experience.camera
     this.debug = this.experience.debug
+    this.device = this.sizes.device
+
+    this.sizes.on('switchdevice', (device) => {
+      this.device = device
+      console.log(device);
+    })
 
     // Debug
     if(this.debug.active) {
@@ -83,17 +89,21 @@ export default class Interests {
     // Show Panel
     const mcbaToggle = document.querySelector('.mcba')
     const infoPanel = document.querySelector('.info-panel')
-    const close = document.querySelector('.close')
+    const closeIcn = document.querySelector('.close')
+    let infoPanelRightStyle = '0'
 
+    if (this.device === 'desktop') {
+      infoPanelRightStyle  = '-33%'
+    } else {
+      infoPanelRightStyle  = '-100%'
+    }
 
     mcbaToggle.addEventListener('click', () => {
-      console.log(infoPanel);
       infoPanel.style.right = '0'
     });
 
-    close.addEventListener('click', () => {
-      console.log(infoPanel);
-      infoPanel.style.right = '-33%'
+    closeIcn.addEventListener('click', () => {
+      infoPanel.style.right = infoPanelRightStyle
     });
   }
 

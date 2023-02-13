@@ -30,20 +30,19 @@ footer {
 
 /* Scrollbar */
 
-/* width */
 ::-webkit-scrollbar {
   width: 6px;
 }
 
-/* Track */
 ::-webkit-scrollbar-track {
   background: #f1f1f1;
 }
 
-/* Handle */
 ::-webkit-scrollbar-thumb {
   background: #041676;
 }
+
+/* Info Panel */
 
 .info-panel {
   opacity: 1;
@@ -91,6 +90,12 @@ footer {
   padding-bottom: 1.25rem;
 }
 
+.close {
+  cursor: pointer;
+}
+
+/* Interests */
+
 .point {
   position: absolute;
   top: 50%;
@@ -124,7 +129,6 @@ footer {
   padding: 20px;
   background: #04167680;
   backdrop-filter: blur(5px);
-  /* border: 1px solid #ffffff90; */
   color: #ffffff;
   line-height: 1.3em;
   font-family: Helvetica, Arial, sans-serif;
@@ -168,6 +172,7 @@ button:hover {
 }
 
 /* Table */
+
 table {
   border: 1px solid #041676;
   border-collapse: collapse;
@@ -194,10 +199,29 @@ table td {
   text-align: left;
 }
 
-table th {
-  font-size: 1rem;
-}
-
 table {
   margin-bottom: 1.5rem;
+}
+
+@media screen and (max-width: 968px) {
+  .logo {
+    width: 7rem;
+    height: 7rem;
+  }
+
+  .info-panel {
+    right: -100%;
+    top: 0;
+    width: 100%;
+    max-width: 100%;
+    height: 100vh;
+  }
+
+  .info-panel-header {
+    width: 100%;
+  }
+
+  table {
+    table-layout: auto;
+  }
 }
