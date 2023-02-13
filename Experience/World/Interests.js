@@ -1,6 +1,7 @@
 import * as THREE from 'three'
 import Experience from '../Experience.js'
 import { EventEmitter } from 'events'
+import gsap from 'gsap'
 
 export default class Interests {
   constructor() {
@@ -26,6 +27,7 @@ export default class Interests {
     this.points = []
     this.raycaster = new THREE.Raycaster()
     this.setInterests()
+    this.showInfos()
   }
 
   setInterests() {
@@ -75,6 +77,24 @@ export default class Interests {
         .max(10)
         .step(0.01)
     }
+  }
+
+  showInfos() {
+    // Show Panel
+    const mcbaToggle = document.querySelector('.mcba')
+    const infoPanel = document.querySelector('.info-panel')
+    const close = document.querySelector('.close')
+
+
+    mcbaToggle.addEventListener('click', () => {
+      console.log(infoPanel);
+      infoPanel.style.right = '0'
+    });
+
+    close.addEventListener('click', () => {
+      console.log(infoPanel);
+      infoPanel.style.right = '-33%'
+    });
   }
 
   resize() {}

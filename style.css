@@ -28,36 +28,65 @@ footer {
   width: 100%;
 }
 
-.info {
+/* Scrollbar */
+
+/* width */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #041676;
+}
+
+.info-panel {
   opacity: 1;
   position: absolute;
-  right: 0;
+  right: -33%;
   top: 0;
   width: 33%;
+  max-width: 700px;
   height: 100vh;
   background-color: #fff;
   color: #041676;
-  padding: 1.25rem;
+
   z-index: 100;
+  transition: all .3s;
+  overflow-y: auto;
 }
 
-.info .close {
-  float: right;
+.info-panel-header {
+  position: fixed;
+  width: 33%;
+  background-color: #fff;
+  padding: 1rem 1.25rem 1.2rem 1.25rem;
+  display: flex;
+  justify-content: flex-end;
 }
 
-.info h2 {
+.info-panel-content {
+  padding: 1.25rem;
+}
+
+.info-panel h2 {
   padding-bottom: 1.25rem;
 }
 
-.info h3 {
+.info-panel h3 {
   padding-bottom: 1.25rem;
 }
 
-.info p {
+.info-panel p {
   padding-bottom: 2rem;
 }
 
-.info img {
+.info-panel-content img {
   max-width: 100%;
   padding-bottom: 1.25rem;
 }
@@ -78,7 +107,7 @@ footer {
   line-height: 40px;
   font-weight: 100;
   font-size: 32px;
-  cursor: help;
+  cursor: pointer;
   transform: scale(0, 0);
   transition: transform 0.3s;
 }
@@ -136,4 +165,39 @@ button {
 button:hover {
   background-color: #fff;
   color: #041676;
+}
+
+/* Table */
+table {
+  border: 1px solid #041676;
+  border-collapse: collapse;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  table-layout: fixed;
+}
+
+table caption {
+  text-align: left;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+table tr {
+  border: 1px solid #041676;
+  padding: .35rem;
+}
+
+table th,
+table td {
+  padding: 1rem;
+  text-align: left;
+}
+
+table th {
+  font-size: 1rem;
+}
+
+table {
+  margin-bottom: 1.5rem;
 }
