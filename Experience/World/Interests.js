@@ -186,6 +186,7 @@ export default class Interests {
     }
 
     mcba.addEventListener('click', () => {
+      infoPanel.scrollTop = 0
       infoPanel.style.right = '0'
       infoPanelImage.src = infos[0].image
       infoPanelLogo.src = infos[0].logo
@@ -205,6 +206,7 @@ export default class Interests {
     });
 
     mudac.addEventListener('click', () => {
+      infoPanel.scrollTop = 0
       infoPanel.style.right = '0'
       infoPanelImage.src = infos[1].image
       infoPanelLogo.src = infos[1].logo
@@ -224,6 +226,7 @@ export default class Interests {
     });
 
     elysee.addEventListener('click', () => {
+      infoPanel.scrollTop = 0
       infoPanel.style.right = '0'
       infoPanelImage.src = infos[2].image
       infoPanelLogo.src = infos[2].logo
@@ -250,29 +253,29 @@ export default class Interests {
   resize() {}
 
   update() {
-      for(const point of this.points) {
-        const screenPosition = point.position.clone()
-        screenPosition.project(this.camera.orthographicCamera)
+    for(const point of this.points) {
+      const screenPosition = point.position.clone()
+      screenPosition.project(this.camera.orthographicCamera)
 
-        this.raycaster.setFromCamera(screenPosition, this.camera.orthographicCamera)
-        const intersects = this.raycaster.intersectObjects(this.scene.children, true)
+      this.raycaster.setFromCamera(screenPosition, this.camera.orthographicCamera)
+      const intersects = this.raycaster.intersectObjects(this.scene.children, true)
 
-        if(intersects.length === 0) {
-          point.element.classList.add('visible')
+      if(intersects.length === 0) {
+        point.element.classList.add('visible')
+      } else {
+        const intersectionDistance = intersects[0].distance
+        const pointDistance = point.position.distanceTo(this.camera.orthographicCamera.position)
+
+        if(intersectionDistance < pointDistance) {
+          point.element.classList.remove('visible')
         } else {
-          const intersectionDistance = intersects[0].distance
-          const pointDistance = point.position.distanceTo(this.camera.orthographicCamera.position)
-
-          if(intersectionDistance < pointDistance) {
-            point.element.classList.remove('visible')
-          } else {
-            point.element.classList.add('visible')
-          }
+          point.element.classList.add('visible')
         }
-
-        const translateX = screenPosition.x * this.sizes.width * 0.5
-        const translateY = - screenPosition.y * this.sizes.height * 0.5
-        point.element.style.transform = `translateX(${translateX}px) translateY(${translateY}px)`
       }
+
+      const translateX = screenPosition.x * this.sizes.width * 0.5
+      const translateY = - screenPosition.y * this.sizes.height * 0.5
+      point.element.style.transform = `translateX(${translateX}px) translateY(${translateY}px)`
+    }
   }
 }
