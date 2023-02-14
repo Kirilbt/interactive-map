@@ -169,7 +169,7 @@ a:focus {
   font-size: 32px;
   cursor: help;
   opacity: 0;
-  transition: opacity 0.3s;
+  transition: all 0.3s;
   /* Prevent selection */
   -webkit-user-drag: none;
   user-select: none;

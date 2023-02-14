@@ -27,8 +27,6 @@ export default class Bike {
     }
 
     this.setPlateforme10Model()
-    this.onMouseMove()
-    this.setPlateforme10Group()
   }
 
   setPlateforme10Model() {
@@ -52,12 +50,9 @@ export default class Bike {
     textureTerrain.encoding = THREE.sRGBEncoding
     const materialTerrain = new THREE.MeshBasicMaterial({ map: textureTerrain })
 
-    const tempMaterial = new THREE.MeshBasicMaterial({ color: 0xffcc00 })
     const lightPanelTexture = new THREE.MeshBasicMaterial({ color: 0xffffe5 })
 
     this.actualPlateforme10.traverse((child) => {
-      // child.material = tempMaterial
-
       if(child.name.match(/^mdba.*$/)) {
         child.material = materialMdba
       }
@@ -77,35 +72,13 @@ export default class Bike {
       if(child.name.match(/^lightPanel.*$/)) {
         child.material = lightPanelTexture
       }
-
-      // this.plateforme10Children[child.name.toLowerCase()] = child
     })
-  }
 
-  onMouseMove() {
-    window.addEventListener('mousemove', (e) => {
-      this.rotation = ((e.clientX - window.innerWidth / 2) * 2) / window.innerWidth // makes the position of the cursor from -1 to 1
-      this.lerp.target = this.rotation * 0.3
-    })
-  }
-
-  setPlateforme10Group() {
-    // New group so we can rotate the Plateforme10 with GStAP without intefering with our mouse rotation lerping
-    // Like a spinning plateform that can spin independetly from others
-    this.group = new THREE.Group()
-    this.group.add(this.actualPlateforme10)
-    this.scene.add(this.group)
+    this.scene.add(this.actualPlateforme10)
   }
 
   resize() {}
 
   update() {
-    this.lerp.current = GSAP.utils.interpolate(
-      this.lerp.current,
-      this.lerp.target,
-      this.lerp.ease
-    )
-
-    // this.group.rotation.y = this.lerp.current
   }
 }

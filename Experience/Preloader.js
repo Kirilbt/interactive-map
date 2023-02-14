@@ -46,13 +46,13 @@ export default class Preloader extends EventEmitter {
           x: 1,
           y: 0.6,
           z: 1
-        }, 'same')
+        }, 'intro')
       } else {
         this.timeline.to(this.camera.orthographicCamera.position, {
           x: 1,
           y: 0.6,
           z: 1
-        }, 'same')
+        }, 'intro')
       }
     })
   }
