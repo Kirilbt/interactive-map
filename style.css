@@ -58,35 +58,21 @@ body {
   align-items: center;
 }
 
-.circle {
-  width: 0.5rem;
-  height: 0.5rem;
-  border-radius: 50%;
-  background-color: #041676;
-  margin: 0.25rem;
-  animation: loading 1s ease-in-out infinite;
+.loader {
+  transform: rotate(45deg);
+  transform-origin: 50%;
+  animation: loading-rotate 2s ease-in-out infinite;
 }
 
-.circle:nth-child(2) {
-  animation-delay: 0.1s;
+@keyframes loading-rotate {
+  0%				{ transform: rotate(0deg); }
+  100%    	{ transform: rotate(360deg); }
 }
 
-.circle:nth-child(3) {
-  animation-delay: 0.2s;
-}
-
-@keyframes loading {
-  0% {
-    transform: translateY(0);
-  }
-
-  20% {
-    transform: translateY(-0.75rem);
-  }
-
-  40% {
-    transform: translateY(0);
-  }
+.loading-progress {
+  color: #041676;
+  font-size: 4rem;
+  font-weight: 700;
 }
 
 header {
