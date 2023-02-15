@@ -3,7 +3,7 @@ import { clamp, lerp } from '../Utils/math.js'
 export default class Scrolling {
   constructor({
     blockers = ['menu--open'],
-    easing = 0.07,
+    easing = 0.1,
     element,
     speed = 1,
     trigger = document.querySelector('.info-panel-content')
@@ -44,7 +44,7 @@ export default class Scrolling {
     const y = event.touches ? event.touches[0].clientY : event.clientY
     const distance = this.y - y
 
-    this.target = this.position + (distance * 3)
+    this.target = this.position + (distance * 4)
   }
 
   onTouchEnd (event) {

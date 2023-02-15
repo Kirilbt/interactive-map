@@ -164,6 +164,7 @@ a:focus {
   left: 50%;
 }
 
+
 .point .label {
   position: absolute;
   top: -20px;
@@ -180,6 +181,11 @@ a:focus {
   /* Prevent selection */
   -webkit-user-drag: none;
   user-select: none;
+}
+
+
+.point:hover .label {
+  scale: 1.2;
 }
 
 .point.visible .label {
