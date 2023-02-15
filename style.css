@@ -92,6 +92,7 @@ header {
   display: flex;
   width: 100%;
   justify-content: space-between;
+  pointer-events: none;
 }
 
 footer {
@@ -167,16 +168,12 @@ a:focus {
   line-height: 40px;
   font-weight: 100;
   font-size: 32px;
-  cursor: help;
+  cursor: pointer;
   opacity: 0;
   transition: all 0.3s;
   /* Prevent selection */
   -webkit-user-drag: none;
   user-select: none;
-}
-
-.museum .label {
-  cursor: pointer;
 }
 
 .point.visible .label {
@@ -293,10 +290,8 @@ button:hover {
 table {
   border: 1px solid #041676;
   border-collapse: collapse;
-  margin: 0;
-  padding: 0;
   width: 100%;
-  table-layout: fixed;
+  /* table-layout: fixed; */
 }
 
 table caption {
@@ -320,6 +315,11 @@ table {
   margin-bottom: 1.5rem;
 }
 
+.col-min {
+  /* background-color: #ff6407; */
+  width: 35%;
+}
+
 /* MOBILE / TABLET */
 
 @media screen and (max-width: 968px) {
@@ -336,10 +336,6 @@ table {
 
   .info-panel-header {
     width: 100%;
-  }
-
-  table {
-    table-layout: auto;
   }
 
   footer {

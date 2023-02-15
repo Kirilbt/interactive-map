@@ -1,5 +1,4 @@
 import * as THREE from 'three'
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
 
 import Experience from './Experience.js'
 
@@ -29,7 +28,6 @@ export default class Camera {
 
     // Setup
     this.createOrthographicCamera()
-    this.setOrbitControls()
   }
 
   createOrthographicCamera() {
@@ -53,13 +51,6 @@ export default class Camera {
     // this.scene.add(this.orthographicCameraHelper)
   }
 
-  setOrbitControls() {
-    this.controls = new OrbitControls(this.orthographicCamera, this.canvas)
-    this.controls.enableDamping = true
-    this.controls.enableZoom = true
-    this.controls.maxPolarAngle = Math.PI / 2
-  }
-
   resize() {
     // Updating Orthographic Camera on Resize
     this.orthographicCamera.left = (-this.sizes.aspect * this.sizes.frustum) / 2
@@ -70,8 +61,6 @@ export default class Camera {
   }
 
   update() {
-    this.controls.update()
-
     // // Updating Orthographic Camera Helper
     // this.orthographicCameraHelper.matrixWorldNeedsUpdate = true
     // this.orthographicCameraHelper.update()
