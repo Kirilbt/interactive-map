@@ -3,7 +3,7 @@ import { clamp, lerp } from '../Utils/math.js'
 export default class Scrolling {
   constructor({
     blockers = ['menu--open'],
-    easing = 0.05,
+    easing = 0.07,
     element,
     speed = 1,
     trigger = document.querySelector('.info-panel-content')
