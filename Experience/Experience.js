@@ -6,6 +6,8 @@ import Resources from './Utils/Resources.js'
 import Debug from './Utils/Debug.js'
 import assets from './Utils/assets.js'
 
+import Scrolling from './Components/Scrolling.js'
+
 import Camera from './Camera.js'
 import Controls from './Controls.js'
 import Renderer from './Renderer.js'
@@ -32,9 +34,9 @@ export default class Experience {
     this.world = new World()
     this.preloader = new Preloader()
 
-    // this.preloader.on('enableControls', () => {
-    //   this.controls = new Controls()
-    // })
+    this.scrolling = new Scrolling({
+      element: document.querySelector('.info-panel-content')
+    })
 
     this.sizes.on('resize', () => {
       this.resize()
@@ -43,18 +45,23 @@ export default class Experience {
     this.time.on('update', () => {
       this.update()
     })
+
+    document.documentElement.style.setProperty('--100vh', `${window.innerHeight}px`)
   }
 
   resize() {
     this.camera.resize()
     this.world.resize()
     this.renderer.resize()
+    this.scrolling.resize()
+    document.documentElement.style.setProperty('--100vh', `${window.innerHeight}px`)
   }
 
   update() {
     this.camera.update()
     this.world.update()
     this.renderer.update()
+    this.scrolling.update()
 
     if(this.controls) {
       this.controls.update()

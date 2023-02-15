@@ -4,6 +4,12 @@
   box-sizing: border-box;
 }
 
+html {
+  height: 100vh;
+  overflow: hidden;
+  width: 100%;
+}
+
 body {
   font-family: Helvetica, Arial, sans-serif;
   overflow: hidden;
@@ -226,34 +232,41 @@ a:focus {
   color: #041676;
   z-index: 100;
   transition: all .3s;
-  overflow-y: auto;
 }
 
 .info-panel-header {
   position: sticky;
-  top: 0;
   width: 100%;
   background-color: #fff;
-  padding: 1rem 1.25rem 1.2rem 1.25rem;
   display: flex;
   justify-content: flex-end;
+  z-index: 999;
+  padding: 1rem 1.25rem 1.2rem 1.25rem;
 }
 
 .info-panel-content {
+  height: 100vh;
+}
+
+.info-panel-content-wrapper {
   padding: 0 1.25rem 1.25rem 1.25rem;
 }
 
-.info-panel .info-panel-title {
+.info-panel-image {
+  margin-top: 60px;
+}
+
+.info-panel-title {
   padding-bottom: 1.25rem;
 }
 
-.info-panel .info-panel-lead {
+.info-panel-lead {
   font-weight: 700;
   font-size: 1.125rem;
   padding-bottom: 1.25rem;
 }
 
-.info-panel .info-panel-description {
+.info-panel-description {
   padding-bottom: 2rem;
 }
 
