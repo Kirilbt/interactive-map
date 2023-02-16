@@ -8,7 +8,7 @@
     <title>Plateforme 10 - Interactive Map</title>
   </head>
   <body>
-    <div id="debug"></div>
+    <!-- <div id="debug"></div> -->
 
     <div class="experience">
       <canvas class="experience-canvas"></canvas>
@@ -29,111 +29,126 @@
       <img class="logo" src="/images/logo-plateforme10.svg" alt="Logo Plateforme 10">
     </header>
 
-    <!-- Points of Interests / Info Panels -->
-    <div class="point mcba museum">
-      <img class="label" src="/images/logo-mcba.svg" alt="Logo MCBA">
-      <div class="text">Musée Cantonal des Beaux-Arts Lausanne</div>
-    </div>
-    <div class="point mudac museum">
-      <img class="label" src="/images/logo-mudac.svg" alt="Logo Mudac">
-      <div class="text">Musée Cantonal de Design et d'Arts Appliqués Contemporains</div>
-    </div>
-    <div class="point elysee museum">
-      <img class="label" src="/images/logo-elysee.svg" alt="Logo Photo Elysée">
-      <div class="text">Photo Elysée</div>
-    </div>
-
-    <div class="point arcadia restaurant">
-      <img class="label icn" src="/images/icn-restaurant.svg" alt="Restaurant Icon">
-      <div class="text">Arcadia Restaurant</div>
-    </div>
-    <div class="point nabi restaurant">
-      <img class="label icn" src="/images/icn-restaurant.svg" alt="Restaurant Icon">
-      <div class="text">Le Nabi Café-Restaurant</div>
-    </div>
-    <div class="point lumen restaurant">
-      <img class="label icn" src="/images/icn-restaurant.svg" alt="Restaurant Icon">
-      <div class="text">Lumen Café </div>
-    </div>
-
-    <div class="info-panel">
-      <div class="info-panel-header">
-        <img class="close" src="/images/icn-close.svg" alt="">
+    <!-- Main -->
+    <main>
+      <!-- Points of Interests -->
+      <div class="point mcba museum">
+        <img class="label" src="/images/logo-mcba.svg" alt="Logo MCBA">
+        <div class="text">Musée Cantonal des Beaux-Arts Lausanne</div>
       </div>
-      <div class="info-panel-content">
-        <div class="info-panel-content-wrapper">
-          <img class="info-panel-image" src="" alt="">
-          <img class="info-panel-logo" src="" alt="">
-          <h2 class="info-panel-title"></h2>
-          <p class="info-panel-lead"></p>
-          <p class="info-panel-description"></p>
-          <table>
-            <caption>Schedule</caption>
-              <tr>
-                <th scope="col">Days</th>
-                <th scope="col">Time</th>
-              </tr>
-              <tr>
-                <td class="col-min">Monday</td>
-                <td class="info-panel-monday"></td>
-              </tr>
-              <tr>
-                <td class="col-min">Tuesday</td>
-                <td class="info-panel-tuesday"></td>
-              </tr>
-              <tr>
-                <td class="col-min">Wednesday</td>
-                <td class="info-panel-wednesday"></td>
-              </tr>
-              <tr>
-                <td class="col-min">Thursday</td>
-                <td class="info-panel-thursday"></td>
-              </tr>
-              <tr>
-                <td class="col-min">Friday</td>
-                <td class="info-panel-friday"></td>
-              </tr>
-              <tr>
-                <td class="col-min">Saturday</td>
-                <td class="info-panel-saturday"></td>
-              </tr>
-              <tr>
-                <td class="col-min">Sunday</td>
-                <td class="info-panel-sunday"></td>
-              </tr>
-          </table>
-          <table>
-            <caption>Contact</caption>
-            <tbody>
-              <tr>
-                <th class="col-min" scope="row">Phone</th>
-                <td class="info-panel-phone"></td>
-              </tr>
-              <tr>
-                <th class="col-min"  scope="row">Email</th>
-                <td class="info-panel-email"></td>
-              </tr>
-            </tbody>
-          </table>
+      <div class="point mudac museum">
+        <img class="label" src="/images/logo-mudac.svg" alt="Logo Mudac">
+        <div class="text">Musée Cantonal de Design et d'Arts Appliqués Contemporains</div>
+      </div>
+      <div class="point elysee museum">
+        <img class="label" src="/images/logo-elysee.svg" alt="Logo Photo Elysée">
+        <div class="text">Photo Elysée</div>
+      </div>
 
-          <a class="info-panel-website" href="">
-            <button>Visit website</button>
-          </a>
+      <div class="point arcadia restaurant">
+        <img class="label icn" src="/images/icn-restaurant.svg" alt="Restaurant Icon">
+        <div class="text">Arcadia Restaurant</div>
+      </div>
+      <div class="point nabi restaurant">
+        <img class="label icn" src="/images/icn-restaurant.svg" alt="Restaurant Icon">
+        <div class="text">Le Nabi Café-Restaurant</div>
+      </div>
+      <div class="point lumen restaurant">
+        <img class="label icn" src="/images/icn-restaurant.svg" alt="Restaurant Icon">
+        <div class="text">Lumen Café </div>
+      </div>
+
+      <!-- Info Panels  -->
+      <div class="info-panel">
+        <div class="info-panel-header">
+          <img class="close" src="/images/icn-close.svg" alt="">
+        </div>
+        <div class="info-panel-content">
+          <div class="info-panel-content-wrapper">
+            <img class="info-panel-image" src="" alt="">
+            <img class="info-panel-logo" src="" alt="">
+            <h2 class="info-panel-title"></h2>
+            <p class="info-panel-lead"></p>
+            <p class="info-panel-description"></p>
+            <table>
+              <caption>Schedule</caption>
+                <tr>
+                  <th scope="col">Days</th>
+                  <th scope="col">Time</th>
+                </tr>
+                <tr>
+                  <td class="col-min">Monday</td>
+                  <td class="info-panel-monday"></td>
+                </tr>
+                <tr>
+                  <td class="col-min">Tuesday</td>
+                  <td class="info-panel-tuesday"></td>
+                </tr>
+                <tr>
+                  <td class="col-min">Wednesday</td>
+                  <td class="info-panel-wednesday"></td>
+                </tr>
+                <tr>
+                  <td class="col-min">Thursday</td>
+                  <td class="info-panel-thursday"></td>
+                </tr>
+                <tr>
+                  <td class="col-min">Friday</td>
+                  <td class="info-panel-friday"></td>
+                </tr>
+                <tr>
+                  <td class="col-min">Saturday</td>
+                  <td class="info-panel-saturday"></td>
+                </tr>
+                <tr>
+                  <td class="col-min">Sunday</td>
+                  <td class="info-panel-sunday"></td>
+                </tr>
+            </table>
+            <table>
+              <caption>Contact</caption>
+              <tbody>
+                <tr>
+                  <th class="col-min" scope="row">Phone</th>
+                  <td class="info-panel-phone"></td>
+                </tr>
+                <tr>
+                  <th class="col-min"  scope="row">Email</th>
+                  <td class="info-panel-email"></td>
+                </tr>
+              </tbody>
+            </table>
+
+            <a class="info-panel-website" href="">
+              <button>Visit website</button>
+            </a>
+          </div>
         </div>
       </div>
-    </div>
+    </main>
 
     <!-- Footer -->
     <footer>
-      <div class="designed-by">
-        Created by <a href="http://kiril.ch">kiril.ch</a>
+      <div class="controls">
+        <p class="controls-mouse">
+          Mouse Controls<br><br>
+          Left - Rotate<br>
+          Right - Pan<br>
+          Middle - Dolly
+        </p>
+        <p class="controls-touch">
+          Controls<br><br>
+          One Finger - Rotate<br>
+          Two Fingers - Dolly & Pan<br>
+        </p>
       </div>
-      <div class="links">
-        <span>Follow me: </span>
-        <a href="https://github.com/Kirilbt">Github</a>
-        <a href="https://twitter.com/kirilbt">Twitter</a>
-        <a href="https://www.linkedin.com/in/kiriltucker/">LinkedIn</a>
-        <a href="https://www.instagram.com/kirilbt/">Instagram</a>
+      <div class="footer">
+        <div class="designed-by">
+          Created by <a href="http://kiril.ch">kiril.ch</a>
+        </div>
+        <div class="links">
+          <a href="https://github.com/Kirilbt">View Code</a>
+        </div>
       </div>
     </footer>
 

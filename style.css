@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=IBM+Plex+Sans:wght@300;500&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -16,12 +18,6 @@ body {
 }
 
 /* Experience */
-
-.experience {
-  position: fixed;
-  width: 100vw;
-  height: 100vh;
-}
 
 .experience-canvas {
   position: fixed;
@@ -85,25 +81,6 @@ header {
   width: 100%;
   justify-content: space-between;
   pointer-events: none;
-}
-
-footer {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  padding: 1.25rem;
-  z-index: 1;
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  border-top: 1px solid #041676;
-  color: #041676;
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-}
-
-footer .links a:not(:last-child) {
-  margin-right: 0.5rem;
 }
 
 /* Links */
@@ -325,12 +302,61 @@ table {
   width: 35%;
 }
 
-/* MOBILE / TABLET */
+.controls-mouse,
+.controls-touch {
+  z-index: 9999999;
+  padding: 1.25rem;
+  font-family: 'IBM Plex Mono', monospace;
+  text-transform: uppercase;
+  color: #041676;
+  font-size: 0.8rem;
+  display: none;
+  /* Prevent selection */
+  -webkit-user-drag: none;
+  user-select: none;
+}
+
+footer {
+  font-family: 'IBM Plex Mono', monospace;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  display: flex;
+  width: 100%;
+  color: #041676;
+  flex-direction: column;
+  pointer-events: none;
+}
+
+.footer {
+  width: 100%;
+  padding: 1.25rem;
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid #041676;
+  background-color: #d6d2ca80;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  pointer-events:all;
+}
+
+.footer .links a:not(:last-child) {
+  margin-right: 0.5rem;
+}
+
+/* MEDIA QUERIES */
 
 @media screen and (max-width: 968px) {
   .logo {
-    width: 7rem;
-    height: 7rem;
+    width: 5.5rem;
+    height: 5.5rem;
+  }
+
+  .point label {
+    transform: scale(0.75n);
   }
 
   .info-panel {
@@ -342,10 +368,19 @@ table {
   .info-panel-header {
     width: 100%;
   }
+}
 
-  footer {
-    flex-direction: column;
-    gap: 0.5rem;
+@media (hover: hover) and (pointer: fine) {
+  /* mouse or touchpad */
+  .controls-mouse {
+    display: block;
+  }
+}
+
+@media (hover: none) and (pointer: coarse) {
+  /* touchscreens */
+  .controls-touch {
+    display: block;
   }
 }
 
