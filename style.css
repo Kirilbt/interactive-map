@@ -17,12 +17,16 @@ body {
   overflow: hidden;
 }
 
-/* Experience */
-
-.experience-canvas {
-  position: fixed;
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 1.25rem;
+  z-index: 1;
+  display: flex;
   width: 100%;
-  height: 100%;
+  justify-content: space-between;
+  pointer-events: none;
 }
 
 /* Preloader */
@@ -71,16 +75,12 @@ body {
   font-weight: 700;
 }
 
-header {
-  position: absolute;
-  top: 0;
-  left: 0;
-  padding: 1.25rem;
-  z-index: 1;
-  display: flex;
+/* Experience */
+
+.experience-canvas {
+  position: fixed;
   width: 100%;
-  justify-content: space-between;
-  pointer-events: none;
+  height: 100%;
 }
 
 /* Links */
@@ -127,7 +127,6 @@ a:focus {
   left: 50%;
 }
 
-
 .point .label {
   position: absolute;
   top: -20px;
@@ -146,7 +145,6 @@ a:focus {
   user-select: none;
 }
 
-
 .point:hover .label {
   scale: 1.2;
 }
@@ -158,13 +156,12 @@ a:focus {
 .point .text {
   position: absolute;
   top: 1.5rem;
-  left: -120px;
-  padding: 1rem;
-  width: 12rem;
-  background: #04167690;
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
-  color: #ffffff;
+  left: 0;
+  padding: 0.5rem 0.5rem;
+  min-width: 9rem;
+  background: #ffffff;
+  color: #041676;
+  border-radius: 4px;
   line-height: 1.2rem;
   font-family: Helvetica, Arial, sans-serif;
   font-size: 0.875rem;
@@ -248,25 +245,6 @@ a:focus {
   cursor: pointer;
 }
 
-button {
-  display: inline-block;
-  border: 1px solid #041676;
-  padding: 1rem 2rem;
-  width: 100%;
-  margin: 0;
-  text-decoration: none;
-  background-color: #041676;
-  color: #fff;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: all 0.3s;
-}
-
-button:hover {
-  background-color: #fff;
-  color: #041676;
-}
-
 /* Table */
 
 table {
@@ -301,6 +279,29 @@ table {
   /* background-color: #ff6407; */
   width: 35%;
 }
+
+/* Buttons */
+
+button {
+  display: inline-block;
+  border: 1px solid #041676;
+  padding: 1rem 2rem;
+  width: 100%;
+  margin: 0;
+  text-decoration: none;
+  background-color: #041676;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+button:hover {
+  background-color: #fff;
+  color: #041676;
+}
+
+/* Footer */
 
 .controls-mouse,
 .controls-touch {
@@ -356,7 +357,7 @@ footer {
   }
 
   .point label {
-    transform: scale(0.75n);
+    size: 70%;
   }
 
   .info-panel {
