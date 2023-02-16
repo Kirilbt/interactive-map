@@ -12,6 +12,7 @@ export default class Interests {
     this.camera = this.experience.camera
     this.debug = this.experience.debug
     this.device = this.sizes.device
+    this.scrolling = this.experience.scrolling
 
     this.sizes.on('switchdevice', (device) => {
       this.device = device
@@ -281,7 +282,7 @@ export default class Interests {
     }
 
     mcba.addEventListener('click', () => {
-      infoPanel.scrollTop = 0
+      this.scrolling.target = 0
       infoPanel.style.right = '0'
       infoPanelImage.src = infos[0].image
       infoPanelLogo.src = infos[0].logo
@@ -301,7 +302,7 @@ export default class Interests {
     });
 
     mudac.addEventListener('click', () => {
-      infoPanel.scrollTop = 0
+      this.scrolling.target = 0
       infoPanel.style.right = '0'
       infoPanelImage.src = infos[1].image
       infoPanelLogo.src = infos[1].logo
@@ -321,7 +322,7 @@ export default class Interests {
     });
 
     elysee.addEventListener('click', () => {
-      infoPanel.scrollTop = 0
+      this.scrolling.target = 0
       infoPanel.style.right = '0'
       infoPanelImage.src = infos[2].image
       infoPanelLogo.src = infos[2].logo
@@ -341,7 +342,7 @@ export default class Interests {
     });
 
     arcadia.addEventListener('click', () => {
-      infoPanel.scrollTop = 0
+      this.scrolling.target = 0
       infoPanel.style.right = '0'
       infoPanelImage.src = infos[3].image
       infoPanelLogo.src = infos[3].logo
@@ -361,7 +362,7 @@ export default class Interests {
     });
 
     nabi.addEventListener('click', () => {
-      infoPanel.scrollTop = 0
+      this.scrolling.target = 0
       infoPanel.style.right = '0'
       infoPanelImage.src = infos[4].image
       infoPanelLogo.src = infos[4].logo
@@ -381,7 +382,7 @@ export default class Interests {
     });
 
     lumen.addEventListener('click', () => {
-      infoPanel.scrollTop = 0
+      this.scrolling.target = 0
       infoPanel.style.right = '0'
       infoPanelImage.src = infos[5].image
       infoPanelLogo.src = infos[5].logo

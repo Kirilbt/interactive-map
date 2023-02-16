@@ -125,6 +125,7 @@ a:focus {
   position: absolute;
   top: 50%;
   left: 50%;
+  pointer-events: none;
 }
 
 .point .label {
@@ -140,6 +141,7 @@ a:focus {
   cursor: pointer;
   opacity: 0;
   transition: all 0.3s;
+  pointer-events: all;
   /* Prevent selection */
   -webkit-user-drag: none;
   user-select: none;
@@ -154,21 +156,20 @@ a:focus {
 }
 
 .point .text {
-  position: absolute;
+  position: relative;
   top: 1.5rem;
   left: 0;
-  padding: 0.5rem 0.5rem;
-  min-width: 9rem;
+  padding: 0.5rem 0.75rem;
   background: #ffffff;
   color: #041676;
   border-radius: 4px;
+  z-index: 999;
   line-height: 1.2rem;
   font-family: Helvetica, Arial, sans-serif;
   font-size: 0.875rem;
   text-align: center;
   opacity: 0;
   transition: opacity 0.2s;
-  pointer-events: none;
 }
 
 .text h3 {
@@ -354,10 +355,6 @@ footer {
   .logo {
     width: 5.5rem;
     height: 5.5rem;
-  }
-
-  .point label {
-    size: 70%;
   }
 
   .info-panel {
