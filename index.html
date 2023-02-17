@@ -3,16 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="stylesheet" href="preloader.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#d6d2ca" />
     <title>Plateforme 10 - Interactive Map</title>
   </head>
   <body>
     <!-- <div id="debug"></div> -->
-
-    <div class="experience">
-      <canvas class="experience-canvas"></canvas>
-    </div>
 
     <!-- Preloader -->
     <div class="preloader">
@@ -24,6 +21,11 @@
       </div>
     </div>
 
+    <!-- Experience -->
+    <div class="experience">
+      <canvas class="experience-canvas"></canvas>
+    </div>
+
     <!-- Navbar -->
     <header>
       <img class="logo" src="/images/logo-plateforme10.svg" alt="Logo Plateforme 10">
@@ -32,10 +34,6 @@
     <!-- Main -->
     <main>
       <!-- Points of Interests -->
-      <div class="point mcba museum">
-        <img class="label" src="/images/logo-mcba.svg" alt="Logo MCBA">
-        <div class="text">Musée Cantonal des Beaux-Arts Lausanne</div>
-      </div>
       <div class="point mudac museum">
         <img class="label" src="/images/logo-mudac.svg" alt="Logo Mudac">
         <div class="text">Musée Cantonal de Design et d'Arts Appliqués Contemporains</div>
@@ -44,7 +42,6 @@
         <img class="label" src="/images/logo-elysee.svg" alt="Logo Photo Elysée">
         <div class="text">Photo Elysée</div>
       </div>
-
       <div class="point arcadia restaurant">
         <img class="label icn" src="/images/icn-restaurant.svg" alt="Restaurant Icon">
         <div class="text">Arcadia Restaurant</div>
@@ -56,6 +53,10 @@
       <div class="point lumen restaurant">
         <img class="label icn" src="/images/icn-restaurant.svg" alt="Restaurant Icon">
         <div class="text">Lumen Café </div>
+      </div>
+      <div class="point mcba museum">
+        <img class="label" src="/images/logo-mcba.svg" alt="Logo MCBA">
+        <div class="text">Musée Cantonal des Beaux-Arts Lausanne</div>
       </div>
 
       <!-- Info Panels  -->
@@ -133,13 +134,14 @@
         <p class="controls-mouse">
           Mouse Controls<br><br>
           Left - Rotate<br>
-          Right - Pan<br>
-          Middle - Dolly
+          Right - Move<br>
+          Middle - Zoom
         </p>
         <p class="controls-touch">
           Controls<br><br>
-          One Finger - Rotate<br>
-          Two Fingers - Dolly & Pan<br>
+          One Finger Drag - Rotate<br>
+          Two Finger Drag - Move<br>
+          Pinch/Spread - Zoom<br>
         </p>
       </div>
       <div class="footer">

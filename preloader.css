@@ -1,0 +1,45 @@
+/* Preloader */
+
+.hidden {
+  display: none;
+}
+
+.preloader {
+  background-color: #d6d2ca;
+  width: 100%;
+  height: 100vh;
+  opacity: 1;
+  position: fixed;
+  z-index: 99999;
+}
+
+.preloader-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loader {
+  transform: rotate(45deg);
+  transform-origin: 50%;
+  animation: loading-rotate 2s ease-in-out infinite;
+}
+
+@keyframes loading-rotate {
+  0%				{ transform: rotate(0deg); }
+  100%    	{ transform: rotate(360deg); }
+}
+
+.loading-progress {
+  color: #041676;
+  font-size: 4rem;
+  font-weight: 700;
+}
