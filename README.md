@@ -11,6 +11,15 @@ Tech demo of an interactive map using Three.js.
 
 ### Process <a name="process"></a>
 
+#### 3D Modeling from References
+![snip1](https://user-images.githubusercontent.com/98451613/219614860-163190c5-1e59-4a61-ae0d-e3fa47ca6d57.PNG)
+![snip2](https://user-images.githubusercontent.com/98451613/219614886-e8d3721c-9514-41ba-9d4e-acf47b01f442.PNG)
+![snip3](https://user-images.githubusercontent.com/98451613/219615163-d7057df2-567b-4de7-9a9a-872a8d058a94.PNG)
+
+#### Texture Baking
+![snip4](https://user-images.githubusercontent.com/98451613/219615189-05b47552-eaa5-40d2-ae8d-8b902b3d286e.PNG)
+
+
 ### Built with <a name="builtwith"></a>
 
 - HTML, CSS, Javascript
@@ -23,4 +32,4 @@ Tech demo of an interactive map using Three.js.
 
 - [Kiril Bernard Tucker](https://github.com/Kirilbt)
 
-Special thanks to Volo for all the Blender tips and Bruno Simon for answering all my questions about Three.js.
+Special thanks to Volodreamer for all the Blender tips and Bruno Simon for answering all my questions about Three.js.
