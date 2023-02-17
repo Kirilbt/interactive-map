@@ -1,6 +1,6 @@
 # Plateforme 10 - Interactive Map
 
-Three.js interactive map of Plateforme 10 - Lausanne's arts district in Switzerland. The 3D Map was created from scratch using Blender. You can view some images of the process down below.
+Interactive map of Plateforme 10 - Lausanne's arts district in Switzerland. The 3D Map was created from scratch using Blender and Three.js. You can view some images of the process down below.
 
 **[> View the live demo](https://plateforme10-interactive-map.vercel.app/)**
 
