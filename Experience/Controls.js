@@ -20,6 +20,7 @@ export default class Controls {
     this.controls.enableDamping = true
     this.controls.enableZoom = true
     this.controls.maxPolarAngle = Math.PI / 2
+    this.controls.listenToKeyEvents( window )
   }
 
   resize() {}
